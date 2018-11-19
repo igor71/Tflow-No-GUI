@@ -50,4 +50,6 @@ NOTES:
    For doing so, need to run docker image detached (like in above command) and then, access docker container as following:
    ```
    docker exec -it tflow-no-gui /bin/bash
+   echo "import pty; pty.spawn('/bin/bash')" > /tmp/run_as_jenkins.py
+   python /tmp/run_as_jenkins.py
    ```
