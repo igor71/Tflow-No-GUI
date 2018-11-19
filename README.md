@@ -1,7 +1,7 @@
 # Tflow-No-GUI
 This repository contains build no GUI tensorflow docker image
 
-### Pre Requerements & Manual Buils steps:
+### Pre Requirements & Manual Build steps:
 
 ```
 Make sure nvidia/cuda:X.0-cudnnX-base (Image_ID: 51e73d3af9a7) image existing on the target server
