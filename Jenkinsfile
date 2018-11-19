@@ -10,7 +10,7 @@ pipeline {
 		   ''' 
             }
         }
-        stage('Import yi/tflow-gui Docker Image') {
+        stage('Import nvidia/cuda Docker Image') {
             steps {
                 sh '''#!/bin/bash -xe
                    # Bacic Docker Image For Tensorflow Versions 1.5 - 1.9
