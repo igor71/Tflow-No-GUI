@@ -38,7 +38,7 @@ NOTES:
 
 1.  Run the docker manually by executing following command:
    ```
-   nvidia-docker run -d --name tflow-no-gui --user 1001:1001 -v /media:/media yi/tflow-no-gui:latest
+   nvidia-docker run -id --name tflow-no-gui --user 1001:1001 -v /media:/media yi/tflow-no-gui:latest
    ```
    Docker image prepared to run under local jenkins user (UID & GUID: 1001). This will tell Docker to run its processes with
    user ID 1001 and group ID 1001. That will mean that any files created by that process also belong to the user with ID 1001.
@@ -49,5 +49,5 @@ NOTES:
    problems when files saved outside of the docker container.
    For doing so, need to run docker image detached (like in above command) and then, access docker container as following:
    ```
-   docker exec -it tflow-no-gui
+   docker exec -it tflow-no-gui /bin/bash
    ```
