@@ -18,5 +18,5 @@ git clone --branch=master --depth=1 https://github.com/igor71/Tflow-No-GUI/
 
 cd Tflow-No-GUI
 
-./tflow-no-gui-build-all.sh
+bash tflow-no-gui-build-all.sh
 ```
