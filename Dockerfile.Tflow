@@ -1,4 +1,4 @@
-FROM yi/tflow-no-gui:latest
+FROM yi/tflow-no-gui-base:latest
  
 MAINTAINER Igor Rabkin <igor.rabkin@xiaoyi.com>
 
