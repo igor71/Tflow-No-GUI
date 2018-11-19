@@ -41,6 +41,10 @@ NOTES:
    nvidia-docker run -id --name tflow-no-gui --user 1001:1001 -v /media:/media yi/tflow-no-gui:latest
    or
    nvidia-docker run -id --name tflow-no-gui -u jenkins -v /media:/media yi/tflow-no-gui:lates
+   
+   -i  : Keep STDIN open even if not attached
+   -d  : Detached mode. Run container in the background
+   -t  : Allocate a pseudo-tty
    ```
    Docker image prepared to run under local jenkins user (UID & GUID: 1001). This will tell Docker to run its processes with
    user ID 1001 and group ID 1001. That will mean that any files created by that process also belong to the user with ID 1001.
