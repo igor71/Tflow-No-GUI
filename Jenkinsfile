@@ -8,16 +8,16 @@ pipeline {
                       image_id="$(docker images -q nvidia/cuda:9.0-cudnn7-base)"
                       echo "Basic Docker Image For Current Branch Is: $image_id"
                       # Bacic Docker Image For Tensorflow Version 1.10
-                      wrong_image_id=e9395c7651ae
+                      wrong_image_id=b82f2e7e5be4
                       echo "Wrong Docker Image For Current Branch Is: $wrong_image_id"
                       # Check If Docker Image Exist On Desired Server
                       if [[ "$(docker images -q yi/tflow-gui:latest 2> /dev/null)" == "" ]]; then
-                         pv -f /media/common/DOCKER_IMAGES/Tflow-GUI/9.0-cudnn7-base/yi-tflow-gui-1.5-1.9.tar | docker load
-                         docker tag 08f3e9f87c94 yi/tflow-gui:latest
+                         pv /media/common/DOCKER_IMAGES/Nvidia/BasicImages/nvidia-cuda-9.0-cudnn7-base-1.5-1.9.tar | docker load
+                         docker tag 51e73d3af9a7 nvidia/cuda:9.0-cudnn7-base
                       elif [ "$image_id" == "$wrong_image_id" ]; then
                          echo "Wrong Docker Image!!! Removing..."
                          docker rmi -f nvidia/cuda:9.0-cudnn7-base
-                         pv -f /media/common/DOCKER_IMAGES/Tflow-GUI/9.0-cudnn7-base/yi-tflow-gui-1.5-1.9.tar | docker load
+                         pv /media/common/DOCKER_IMAGES/Nvidia/BasicImages/nvidia-cuda-9.0-cudnn7-base-1.5-1.9.tar | docker load
                          docker tag 51e73d3af9a7 nvidia/cuda:9.0-cudnn7-base
                       else
                          echo "Docker Image Already Exist"
