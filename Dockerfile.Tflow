@@ -3,6 +3,8 @@ FROM yi/tflow-no-gui-base:latest
 MAINTAINER Igor Rabkin <igor.rabkin@xiaoyi.com>
 
 ARG TF_BRANCH=r.1.8
+ARG FILE_NAME=tensorflow-1.8.0-cp36-cp36m-linux_x86_64.whl
+ARG FTP_PATH=ftp://jenkins-cloud/pub/Tensorflow-1.8.0-9.0-cudnn7-devel-ubuntu16.04-Server_2.3.4.5/tensorflow-1.8.0-cp36-cp36m-linux_x86_64.whl
 
 #################################################
 #     Python 3.6 installations for dev          #
