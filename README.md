@@ -1,5 +1,5 @@
 # Tflow-No-GUI
-This repository contains build no GUI tensorflow docker image
+This repository contains all stuff for building no GUI tensorflow docker image
 
 ### Pre Requirements & Manual Build steps:
 
