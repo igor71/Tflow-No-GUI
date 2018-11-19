@@ -40,7 +40,7 @@ NOTES:
    ```
    nvidia-docker run -id --name tflow-no-gui --user 1001:1001 -v /media:/media yi/tflow-no-gui:latest
    or
-   nvidia-docker run -id --name tflow-no-gui -u jenkins -v /media:/media yi/tflow-no-gui:lates
+   nvidia-docker run -id --name tflow-no-gui -u jenkins -v /media:/media yi/tflow-no-gui:latest
    
    -i  : Keep STDIN open even if not attached
    -d  : Detached mode. Run container in the background
