@@ -31,7 +31,7 @@ RUN apt-get install -y --no-install-recommends \
     zip \
     unzip \
     rsync \
-	sudo \
+    sudo \
     openssh-client \
     software-properties-common \
     vim-gtk \
@@ -39,9 +39,9 @@ RUN apt-get install -y --no-install-recommends \
     htop \
     iputils-ping \
     git && \
-	apt-get -q clean -y && \
-	rm -rf /var/lib/apt/lists/* && \
-	rm -f /var/cache/apt/*.bin
+    apt-get -q clean -y && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -f /var/cache/apt/*.bin
 
 	
 ####################################
@@ -62,4 +62,4 @@ RUN groupadd -r -g 1001 jenkins && \
 RUN echo "jenkins  ALL=(ALL)  NOPASSWD: ALL" >> etc/sudoers
 
 # Set full permission for jenkins folder
-RUN chmod -R 777 /var/lib/jenkins
+RUN chmod -R 777 /home/jenkins
