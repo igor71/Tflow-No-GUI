@@ -1,6 +1,15 @@
 pipeline {
   agent {label 'yi-tflow-vnc'}
     stages {
+	stage('Remove Old yi/tflow-no-gui Docker Image') {
+            steps {
+                sh '''#!/bin/bash -xe
+                      echo 'Removing Old Docker Image Version' 
+		      CURRENT_ID=$(docker images | grep -E '^yi/tflow-no-gui.*'${tensorflow_version}-python-${python_version}'' | awk -e '{print $3}')
+		      docker rmi -f yi/tflow-no-gui:${tensorflow_version}-python-${python_version}
+		   ''' 
+            }
+        }
         stage('Import yi/tflow-gui Docker Image') {
             steps {
                 sh '''#!/bin/bash -xe
@@ -12,12 +21,12 @@ pipeline {
                       echo "Wrong Docker Image For Current Branch Is: $wrong_image_id"
                       # Check If Docker Image Exist On Desired Server
                       if [[ "$(docker images -q yi/tflow-gui:latest 2> /dev/null)" == "" ]]; then
-                         pv /media/common/DOCKER_IMAGES/Nvidia/BasicImages/nvidia-cuda-9.0-cudnn7-base-1.5-1.9.tar | docker load
+                         pv -f /media/common/DOCKER_IMAGES/Nvidia/BasicImages/nvidia-cuda-9.0-cudnn7-base-1.5-1.9.tar | docker load
                          docker tag 51e73d3af9a7 nvidia/cuda:9.0-cudnn7-base
                       elif [ "$image_id" == "$wrong_image_id" ]; then
                          echo "Wrong Docker Image!!! Removing..."
                          docker rmi -f nvidia/cuda:9.0-cudnn7-base
-                         pv /media/common/DOCKER_IMAGES/Nvidia/BasicImages/nvidia-cuda-9.0-cudnn7-base-1.5-1.9.tar | docker load
+                         pv -f /media/common/DOCKER_IMAGES/Nvidia/BasicImages/nvidia-cuda-9.0-cudnn7-base-1.5-1.9.tar | docker load
                          docker tag 51e73d3af9a7 nvidia/cuda:9.0-cudnn7-base
                       else
                          echo "Docker Image Already Exist"
