@@ -16,7 +16,7 @@ docker tag 51e73d3af9a7 nvidia/cuda:9.0-cudnn7-base
 
 git clone --branch=master --depth=1 https://github.com/igor71/Tflow-No-GUI/
 
-cd Tflow-Basic-Docker-Image
+cd Tflow-No-GUI
 
 ./tflow-no-gui-build-all.sh
 ```
