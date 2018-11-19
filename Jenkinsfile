@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'yi-tflow-no-gui'}
+  agent {label 'yi-tflow-vnc'}
     stages {
         stage('Import yi/tflow-gui Docker Image') {
             steps {
