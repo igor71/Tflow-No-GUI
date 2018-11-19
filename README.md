@@ -19,4 +19,10 @@ git clone --branch=master --depth=1 https://github.com/igor71/Tflow-No-GUI/
 cd Tflow-No-GUI
 
 bash tflow-no-gui-build-all.sh
+
+### Comment following lines if you'll build docker images using Jenkins job
+
+ARG FILE_NAME=tensorflow-1.8.0-cp36-cp36m-linux_x86_64.whl
+ARG FTP_PATH=ftp://jenkins-cloud/pub/Tensorflow-1.8.0-9.0-cudnn7-devel-ubuntu16.04-Server_2.3.4.5/tensorflow-1.8.0-cp36-cp36m-linux_x86_64.whl
+
 ```
