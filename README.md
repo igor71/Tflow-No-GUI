@@ -6,7 +6,7 @@ This repository contains all stuff for building no GUI tensorflow docker image
 ```
 Make sure nvidia/cuda:X.0-cudnnX-base (Image_ID: 51e73d3af9a7) image existing on the target server
 
-Jenkins suppose to load docker image during buils proccess, if not:
+Bring it, if it's not exist:
 
 pv /media/common/DOCKER_IMAGES/Nvidia/BasicImages/nvidia-cuda-9.0-cudnn7-base-1.5-1.9.tar | docker load
 
