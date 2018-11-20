@@ -20,11 +20,11 @@ cd Tflow-No-GUI
 
 bash tflow-no-gui-build-all.sh
 ```
-### Comment following lines if you'll build docker images using Jenkins job
-
+### Comment following lines if you'll build docker images using Jenkins job:
+```
 ARG FILE_NAME=tensorflow-1.8.0-cp36-cp36m-linux_x86_64.whl
-
 ARG FTP_PATH=ftp://jenkins-cloud/pub/Tensorflow-1.8.0-9.0....
+```
 
 ### This build based on nvidia/cuda:9.0-cudnn7-base-1.5-1.9 docker image
 ```
