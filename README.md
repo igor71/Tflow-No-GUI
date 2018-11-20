@@ -56,6 +56,8 @@ NOTES:
    For doing so, need to run docker image detached (like in above command) and then, access docker container as following:
    ```
    docker exec -it tflow-no-gui /bin/bash
+   
    If you need become root, run the following:
+   
    sudo su
    ```
