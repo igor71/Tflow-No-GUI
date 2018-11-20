@@ -6,7 +6,7 @@ pipeline {
                 sh '''#!/bin/bash -xe
                       echo 'Removing Old Docker Image Version' 
 		      CURRENT_ID=$(docker images | grep -E '^yi/tflow-no-gui.*'${tensorflow_version}-python-${python_version}'' | awk -e '{print $3}')
-		      docker rmi -f yi/tflow-no-gui:${tensorflow_version}-python-${python_version}
+		      docker rmi -f yi/tflow-no-gui:${tensorflow_version}-python-${python_version} || true
 		   ''' 
             }
         }
@@ -20,7 +20,7 @@ pipeline {
                       wrong_image_id=b82f2e7e5be4
                       echo "Wrong Docker Image For Current Branch Is: $wrong_image_id"
                       # Check If Docker Image Exist On Desired Server
-                      if [[ "$(docker images -q yi/tflow-gui:latest 2> /dev/null)" == "" ]]; then
+                      if [[ "$(docker images -q nvidia/cuda:9.0-cudnn7-base 2> /dev/null)" == "" ]]; then
                          pv -f /media/common/DOCKER_IMAGES/Nvidia/BasicImages/nvidia-cuda-9.0-cudnn7-base-1.5-1.9.tar | docker load
                          docker tag 51e73d3af9a7 nvidia/cuda:9.0-cudnn7-base
                       elif [ "$image_id" == "$wrong_image_id" ]; then
