@@ -19,28 +19,28 @@ git clone --branch=master --depth=1 https://github.com/igor71/Tflow-No-GUI/
 cd Tflow-No-GUI
 
 bash tflow-no-gui-build-all.sh
-
+```
 ### Comment following lines if you'll build docker images using Jenkins job
 
 ARG FILE_NAME=tensorflow-1.8.0-cp36-cp36m-linux_x86_64.whl
 ARG FTP_PATH=ftp://jenkins-cloud/pub/Tensorflow-1.8.0-9.0....
-```
+
 ### This build based on nvidia/cuda:9.0-cudnn7-base-1.5-1.9 docker image
 ```
 CUDA Version   -->> 9.0.176
 
 CUDNN Version  -->> 7.0.5.15
 
-PYTHON Version -->> 3.6.3
+PYTHON Version -->> 3.6.7
 ```
 
 NOTES:
 
 1.  Run the docker manually by executing following command:
    ```
-   nvidia-docker run -id --name tflow-no-gui --user 1001:1001 -v /media:/media yi/tflow-no-gui:latest
+   nvidia-docker run -id --name tflow-no-gui --user 1001:1001 -v /media:/media yi/tflow-no-gui:python-3.6
    or
-   nvidia-docker run -id --name tflow-no-gui -u jenkins -v /media:/media yi/tflow-no-gui:latest
+   nvidia-docker run -id --name tflow-no-gui -u jenkins -v /media:/media yi/tflow-no-gui:python-3.6
    
    -i  : Keep STDIN open even if not attached
    -d  : Detached mode. Run container in the background
