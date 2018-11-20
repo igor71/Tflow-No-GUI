@@ -18,7 +18,7 @@ git clone --branch=master --depth=1 https://github.com/igor71/Tflow-No-GUI/
 
 cd Tflow-No-GUI
 
-bash tflow-no-gui-build-all.sh
+bash tflow-no-gui-build.sh
 ```
 ### Comment following lines if you'll build docker images using Jenkins job:
 ```
